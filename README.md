@@ -2,7 +2,7 @@
 
 Vamos a hacer un sistema de apuestas para juegos de futbol.
 
-Se usará el siguiente _[API](https://www.api-football.com/)_
+Se usará el siguiente _[API](https://www.apifootball.com/)_
 
 La idea es que cree una aplicación web para la gestión de un sistema de apuestas para el fútbol
 profesional Colombiano. 
