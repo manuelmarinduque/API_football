@@ -10,7 +10,7 @@ class Usuario(models.Model):
         ('F', 'Femenino')
     )
 
-    cedula = models.CharField(max_length=12,primary_key=True)
+    cedula = models.CharField(max_length=12, primary_key=True)
     nombre_usuario = models.CharField(max_length=20)
     password = models.CharField(max_length=12)
     nombre = models.CharField(max_length=25)
