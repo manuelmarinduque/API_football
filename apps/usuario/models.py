@@ -10,6 +10,11 @@ class Usuario(models.Model):
         ('F', 'Femenino')
     )
 
+    estados = (
+        ('Des', 'Desactivada'),
+        ('Act', 'Activada')
+    )
+
     cedula = models.CharField(max_length=12, primary_key=True)
     nombre_usuario = models.CharField(max_length=20)
     password = models.CharField(max_length=12)
@@ -22,6 +27,7 @@ class Usuario(models.Model):
     fecha_nacimiento = models.DateField()
     nacionalidad = models.CharField(max_length=20)
     ciudad = models.CharField(max_length=30)
+    estado_cuenta = models.CharField(max_length=3, choices=estados)
 
     def getedad(self):
         return int((datetime.date.today() - self.fecha_nacimiento).days / 365.25)
