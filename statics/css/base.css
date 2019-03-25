@@ -1,0 +1,208 @@
+body
+{
+    background: #67e689 !important;
+    width: 100%;
+}
+
+.titulo
+{
+    width: 45%;
+}
+
+.titulo a
+{
+    font-size: 50px;
+    font-family: 'Anton', sans-serif;
+    color: #00a82d;
+    text-decoration: none;
+}
+
+.titulo a:hover
+{
+    color: #00a82d;
+    text-decoration: none;
+}
+
+
+.navbar
+{
+    background: white;
+    width: 100%;
+}
+
+.navbar-principal
+{
+    height: 50px;
+}
+
+.menu
+{
+    float: right;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li 
+{
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+.menu li a
+{ 
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+}
+
+.menu li a:hover
+{
+    color: #00a82d;
+}
+
+#tres-barras
+{
+    display: none;
+}
+
+#min-container
+{
+    min-height: 550px;
+}
+
+
+footer
+{
+    background: #2b2b2b;
+    color: white;
+    height: auto;
+    padding: 20px 0;
+}
+
+.derechos p
+{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+
+@media (min-width: 576px)
+{.container 
+    {
+        max-width: 540px;
+        max-height: auto;
+    }
+}
+
+@media (min-width: 768px)
+{
+    .container 
+    {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px)
+{.container 
+    {
+        max-width: 960px;
+    }  
+}
+
+@media (min-width: 1200px)
+{
+    .container 
+    {
+        max-width: 1140px;
+    }
+    
+}
+
+
+@media(max-width: 1200px)
+{
+    .titulo
+    {
+        width: 35%;
+    }
+    .titulo a
+    {
+        font-size: 40px;
+    }
+}
+
+
+@media(max-width: 991px)
+{
+    #tres-barras
+    {
+        display: block;
+        color: black;
+        font-size: 20px;
+        float: right;
+        margin: 0; 
+        cursor: pointer; 
+        width: auto;
+    }
+    .titulo
+    {
+        width: 75%;
+    }
+    
+    .menu
+    {
+        padding-top: 10px;
+    }
+    .navbar-collapse.in 
+    {
+        margin-top: -5px !important;
+        margin-right: 0px;
+        margin-left: 160px;
+        float: right;
+    }
+    .navbar .navbar-collapse
+    {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        margin-left: 160px;
+        margin-top: -20px;
+        width: 160px;
+        background-color: #fff;
+    }
+    .menu-contraido
+    {
+        position: absolute;
+        top: 80px;
+        width: 90%;
+    }
+    .menu-contraido li
+    {
+        border-bottom: 1px solid #666;
+    }
+}
+
+@media(max-width: 750px)
+{
+
+}
+
+@media (max-width: 576px)
+{
+    .titulo
+    {
+        width: 70%;
+    }
+    .titulo a
+    {
+        font-size: 35pxx;
+    }
+   
+}
+
+
+
+
