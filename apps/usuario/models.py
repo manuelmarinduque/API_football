@@ -29,7 +29,4 @@ class Usuario(models.Model):
     ciudad = models.CharField(max_length=30)
     estado_cuenta = models.CharField(max_length=3, choices=estados)
 
-    def getedad(self):
-        return int((datetime.date.today() - self.fecha_nacimiento).days / 365.25)
-
 
