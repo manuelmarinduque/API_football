@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from API_football.views import HomePageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.usuario.urls'))
+    path('', HomePageView.as_view(), name='Home'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('apps.usuario.urls')),
 ]
