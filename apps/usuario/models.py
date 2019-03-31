@@ -1,32 +1,19 @@
+from django.contrib.auth.models import User
 from django.db import models
-import datetime
 
 
 # Create your models here.
-class Usuario(models.Model):
+class Usuario(User, models.Model):
 
     generos = (
         ('M', 'Masculino'),
         ('F', 'Femenino')
     )
 
-    estados = (
-        ('Des', 'Desactivada'),
-        ('Act', 'Activada')
-    )
-
     cedula = models.CharField(max_length=12, primary_key=True)
-    nombre_usuario = models.CharField(max_length=20)
-    password = models.CharField(max_length=12)
-    nombre = models.CharField(max_length=25)
-    apellido = models.CharField(max_length=25)
     sexo = models.CharField(max_length=1, choices=generos)
-    correo = models.EmailField()
-    saldo = models.PositiveIntegerField()
+    saldo = models.PositiveIntegerField(default=0)
     telefono = models.CharField(max_length=10)
     fecha_nacimiento = models.DateField()
-    nacionalidad = models.CharField(max_length=20)
+    pais = models.CharField(max_length=20)
     ciudad = models.CharField(max_length=30)
-    estado_cuenta = models.CharField(max_length=3, choices=estados)
-
-
