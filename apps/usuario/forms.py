@@ -1,16 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 from apps.usuario.models import Usuario
 
 
 # Create your forms here:
 class RegistroForm(UserCreationForm):
-    generos = (
-        ('M', 'Masculino'),
-        ('F', 'Femenino')
-    )
-    sexo = forms.ChoiceField(choices=generos)
-
     class Meta:
         model = Usuario
         fields = [
@@ -25,3 +21,10 @@ class RegistroForm(UserCreationForm):
             "pais",
             "ciudad",
         ]
+
+    # Método para limpiar o validar el campo email
+    def clean_email(self):
+        email = self.cleaned_data.get("email")
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError("El email ya está registrado")
+        return email
