@@ -11,7 +11,7 @@
     <form action="" method="post">
         {% csrf_token %}
         <h3 class="mb-4">Registro</h3>
-        <!-- Campos uno por uno. Mostrar 'sexo' aquí y no en views para las selecciones -->
+        <!-- Se muestra 'sexo' aquí y no en views para las selecciones -->
         {{ form.as_p }}
 
         <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
