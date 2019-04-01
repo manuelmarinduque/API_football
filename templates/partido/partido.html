@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    Informacion Partidos
+{% endblock %}
+{% block content %}
+    <table class="egt">
+        {% for partidos in partidos %}
+          <tr> {{ partidos }} </tr>   
+        {% endfor %}
+    </table>
+{% endblock %}
