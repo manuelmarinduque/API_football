@@ -4,25 +4,15 @@
 {% endblock %}
 {% block content %}
     <style>
-
+        .errorlist{
+            color: red;}
         label{display:none}
     </style>
     <form action="" method="post">
         {% csrf_token %}
         <h3 class="mb-4">Registro</h3>
         <!-- Campos uno por uno. Mostrar 'sexo' aquí y no en views para las selecciones -->
-        <div> {{ form.username}} </div>
-        <div> {{ form.first_name}} </div>
-        <div> {{ form.last_name}} </div>
-        <div> {{ form.email}} </div>
-        <div> {{ form.cedula}} </div>
-        <div> {{ form.sexo}} </div>
-        <div> {{ form.telefono}} </div>
-        <div> {{ form.fecha_nacimiento}} </div>
-        <div> {{ form.pais}} </div>
-        <div> {{ form.ciudad}} </div>
-        <div> {{ form.password1}} </div>
-        <div> {{ form.password2}} </div>
+        {{ form.as_p }}
 
         <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
     </form>
