@@ -12,7 +12,7 @@ class SignUpView(CreateView):
 
     # Verificar si un usuario se ha registrado:
     def get_success_url(self):
-        return reverse_lazy('Home') + '?register'
+        return reverse_lazy('login') + '?register'
 
     def get_form(self, form_class=None):
         form = super(SignUpView, self).get_form()
