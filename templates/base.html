@@ -66,6 +66,9 @@
             </div>
         </div>
     </nav>
+    {% if 'register' in request.GET %}
+    <p style="color: #00a82d;"> Usuario registrado correctamente</p>
+    {% endif %}
     {% block content %}
 
 

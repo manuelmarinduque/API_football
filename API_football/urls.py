@@ -20,6 +20,7 @@ from API_football.views import HomePageView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='Home'),
+    # Paths de auth
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('apps.usuario.urls')),
 ]
