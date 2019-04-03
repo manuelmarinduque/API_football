@@ -1,8 +1,13 @@
 from django import forms
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.views.generic.detail import DetailView
 from apps.usuario.forms import RegistroForm  # Es como tener en UserCreationForm
 from apps.usuario.models import Usuario
+
+
+class UserDetailView(DetailView):
+    model = Usuario
 
 
 class SignUpView(CreateView):
