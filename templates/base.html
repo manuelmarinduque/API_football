@@ -4,20 +4,28 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% load static %}
-    <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat:700|Source+Sans+Pro:700" rel="stylesheet">
+
+    <!-- Tipos de letras-->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat:700|Source+Sans+Pro:700|Roboto+Slab"" rel="stylesheet">
+
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
           integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+    <!--Hojas de Estilo del proyecto-->      
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/base.css' %}"/>
-    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/registro.css' %}"/>
+   
+    <!-- Latest compiled and minified CSS Libreria Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>{% block title %} BETTING  SYSTEM {% endblock %}</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
+    <div class="container skrollable skrollable-after">
         <div class="titulo">
             <a href="{% url 'Home' %}">BETTING SYSTEM</a>
         </div>
@@ -81,10 +89,12 @@
 {% if 'register' in request.GET %}
     <p style="color: #00a82d;"> Usuario registrado correctamente</p>
 {% endif %}
-{% block content %}
+<div id="min-container" class="contenido">
+    {% block content %}
 
 
-{% endblock %}
+    {% endblock %}
+</div>
 </body>
 <footer>
     <!-- Latest compiled JavaScript -->
@@ -97,10 +107,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+    <script src="https://prinzhorn.github.io/skrollr/dist/skrollr.min.js"></script>
+
+    <!-- Inicio del pie de pagina-->        
     <div class="container">
         <div class="derechos">
             <p>Todos los derechos reservados para BETTING SYSTEM, Colombia.</p>
         </div>
+        <img class="col-lg-4" src="../media/colJuegos.png" alt="Juege legal">
+        <img class="col-lg-4" src="../media/mayores18+.png" alt="Solo para mayores de edad">
+        <img class="col-lg-4" src="../media/colJuegos2.png" alt="Autoriza Coljuegos">
     </div>
 </footer>
 </html>

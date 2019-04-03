@@ -3,17 +3,50 @@
     Registro de Usuario
 {% endblock %}
 {% block content %}
-    <style>
-        .errorlist{
-            color: red;}
-        label{display:none}
-    </style>
-    <form action="" method="post">
-        {% csrf_token %}
-        <h3 class="mb-4">Registro</h3>
-        <!-- Se muestra 'sexo' aquí y no en views para las selecciones -->
-        {{ form.as_p }}
 
-        <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
+    <form action="" method="post" class="formulario col-lg-6 col-11 container">
+        <div class="formulario-interno container">
+            {% csrf_token %}
+            <h3 class="titulo-form mb-4 titulo-formulario">REGISTRATE APOSTADOR</h3>
+            <!-- Se muestra 'sexo' aquí y no en views para las selecciones -->
+            {{ form.username.errors}}
+            {{ form.username   }}
+
+            {{ form.first_name }}
+
+            {{ form.last_name  }}
+
+            {{ form.email.errors}}
+            {{ form.email      }}
+
+            {{ form.cedula.errors}}
+            {{ form.cedula     }}
+
+            {{ form.telefono   }}
+
+            {{ form.fecha_nacimiento.errors}}
+            <label class="textoFormulario inputE col-lg-7 col-md-7 col-sm-12">
+                Fecha de nacimiento: 
+                <br>
+                {{ form.fecha_nacimiento}}
+            </label>
+            <label class="inputE textoFormulario inputR col-lg-5 col-md-5 col-sm-12">
+                Sexo:
+                <br> 
+                {{ form.sexo       }}
+            </label>
+
+            {{ form.pais}}
+
+            {{form.ciudad}}
+
+            {{form.password1.errors}}
+            {{form.password1}}
+
+            {{form.password2.errors}}
+            {{form.password2}}
+
+            <p><input type="submit" class="btn btn-primary btn-block textoFormulario" value="CONFIRMAR"></p>
+        </div>
     </form>
 {% endblock %}
