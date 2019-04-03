@@ -2,6 +2,7 @@ body
 {
     background: #67e689 !important;
     width: 100%;
+    margin-top:150px;
 }
 
 .titulo
@@ -70,7 +71,12 @@ body
 
 #min-container
 {
-    min-height: 550px;
+    min-height: 500px !important;
+}
+
+.contenido
+{
+    margin-top: 150px;
 }
 
 
@@ -202,6 +208,7 @@ footer
     }
    
 }
+
 
 
 

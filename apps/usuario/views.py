@@ -22,18 +22,18 @@ class SignUpView(CreateView):
     def get_form(self, form_class=None):
         form = super(SignUpView, self).get_form()
         # Modificar widgets en tiempo real
-        form.fields['username'].widget = forms.TextInput(attrs={'placeholder': 'Nickname'})
-        form.fields['first_name'].widget = forms.TextInput(attrs={'placeholder': 'Nombre de usuario'})
-        form.fields['last_name'].widget = forms.TextInput(attrs={'placeholder': 'Apellidos'})
-        form.fields['email'].widget = forms.EmailInput(attrs={'placeholder': 'Correo electrónico'})
-        form.fields['cedula'].widget = forms.TextInput(attrs={'placeholder': 'Número de cédula'})
-        form.fields['telefono'].widget = forms.TextInput(attrs={'placeholder': 'Teléfono'})
+        form.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control mb-2','placeholder': 'Nickname'})
+        form.fields['first_name'].widget = forms.TextInput(attrs={'class': 'inputL input','placeholder': 'Nombre de usuario'})
+        form.fields['last_name'].widget = forms.TextInput(attrs={'class': 'inputR input','placeholder': 'Apellidos'})
+        form.fields['email'].widget = forms.EmailInput(attrs={'class': 'input form-control mb-2','placeholder': 'Correo electrónico'})
+        form.fields['cedula'].widget = forms.TextInput(attrs={'class': 'inputL input','placeholder': 'Número de cédula'})
+        form.fields['telefono'].widget = forms.TextInput(attrs={'class': 'inputR input','placeholder': 'Teléfono'})
         # Para no lidear con Select o ChoiceField y similares, no se coloca el campo 'sexo' en esta sección pero sí
         # en el 'registrar.html' y por defecto aparece las selecciones para este campo.
         form.fields['fecha_nacimiento'].widget = forms.SelectDateWidget(years=range(1919, 2019),
-                                                                        attrs={'placeholder': 'Fecha de nacimiento'})
-        form.fields['pais'].widget = forms.TextInput(attrs={'placeholder': 'País'})
-        form.fields['ciudad'].widget = forms.TextInput(attrs={'placeholder': 'Ciudad'})
-        form.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder': 'Contraseña'})
-        form.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder': 'Repite la contraseña'})
+                                                                        attrs={ 'placeholder': 'Fecha de nacimiento'})
+        form.fields['pais'].widget = forms.TextInput(attrs={'class': 'inputL input','placeholder': 'País'})
+        form.fields['ciudad'].widget = forms.TextInput(attrs={'class': 'inputR input','placeholder': 'Ciudad'})
+        form.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'input form-control mb-2','placeholder': 'Contraseña'})
+        form.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'input form-control mb-2','placeholder': 'Repite la contraseña'})
         return form
