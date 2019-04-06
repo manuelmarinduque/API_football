@@ -1,6 +1,6 @@
 body
 {
-    background: #67e689 !important;
+    background: #c7c7c7 !important;
     width: 100%;
     margin-top:150px;
 }
@@ -69,14 +69,10 @@ body
     display: none;
 }
 
-#min-container
-{
-    min-height: 500px !important;
-}
-
 .contenido
 {
     margin-top: 150px;
+    min-height: 450px;
 }
 
 
