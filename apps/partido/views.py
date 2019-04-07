@@ -7,6 +7,15 @@ import json
 
 
 ### Juegos Jugados ####
+
+def JugadosTodasLasLigas(request):
+    espana =  Juegos_Jugados_liga("PD")
+    inglaterra = Juegos_Jugados_liga("PL")
+    italia = Juegos_Jugados_liga("SA")
+    alemania = Juegos_Jugados_liga("BL1")
+    partidos = espana,'/',inglaterra,'/',italia,'/',alemania
+    return render(request, 'partido/partido.html',{'partidos':partidos})
+
 def JuegosJugadosLigaEspaña(request):
 	partidos = Juegos_Jugados_liga("PD") # PD: Liga española
 	return render(request, 'partido/partido.html',{'partidos':partidos})
@@ -59,6 +68,25 @@ def cantidad_fechas_prog_liga(liga):
     cant_fechas = Ordenada_listaMatchday[len(Ordenada_listaMatchday)-1]             
     return cant_fechas
 
+#Descripción: devuelve los datos de un part('Deportivo Alavés', 'CD Leganés', None, None, 31, '2019-04-07T10:00:00Z', None)ido consultado por el id del partido
+#Entrada: string id corresponde al id del partido 
+#Salida: lista con nombrelocal,nombrevisitante,goleslocal,golesvisitante,jornada,fechahora,ganador 
+#        ejemplo: ('FC Barcelona', 'Deportivo Alavés', 3, 0, 1, '2018-08-18T20:15:00Z', 'HOME_TEAM')
+def partidoPorID(id):
+    connection = http.client.HTTPConnection('api.football-data.org')
+    headers = { 'X-Auth-Token': 'ccecd76c9c7f40f09ae18781d1c8f46d' }
+    connection.request('GET', '/v2/matches/'+id, None, headers )
+    response = json.loads(connection.getresponse().read().decode())    
+    equipoLocal = response['match']['homeTeam']['name']
+    equipoVisitante = response['match']['awayTeam']['name']
+    golesLocal = response['match']['score']['fullTime']['homeTeam']
+    golesVisitante = response['match']['score']['fullTime']['awayTeam']
+    jornada = response['match']['matchday']
+    fechaHora = response['match']['utcDate'] 
+    ganadorPartido = response['match']['score']['winner']    
+    partido = equipoLocal,equipoVisitante,golesLocal,golesVisitante,jornada,fechaHora,ganadorPartido
+    return partido 
+
 #Descripción: funcion que devuelve que devuelve los partidos que se han jugado de una liga hasta la ultima fecha disputada
 #Entrada: el codigo de la liga ejemplo : String: "PD" - Primera division española 
 #Salida: La lista de los partidos jugados [(string namelocal,string namevisitante,int goleslocal,int golesvisitante,int jornada, string ganador)]
@@ -78,7 +106,11 @@ def Juegos_Jugados_liga(liga):
         golesVisitante = response['matches'][i]['score']['fullTime']['awayTeam']
         jornadaLiga = response['matches'][i]['matchday']
         ganadorPartido = response['matches'][i]['score']['winner']  # HOME_TEAM (gana equipoLocal), AWAY_TEAM ( gana equipoVisitante), DRAW (Empate)
-        partidoJugado = equipoLocal,equipoVisitante,golesLocal,golesVisitante, jornadaLiga,ganadorPartido
+        fechaHora = response['matches'][i]['utcDate']
+        idLocal = response['matches'][i]['homeTeam']['id']
+        idVisitante = response['matches'][i]['awayTeam']['id']
+        idPartido = response['matches'][i]['id']
+        partidoJugado = equipoLocal,equipoVisitante,golesLocal,golesVisitante, jornadaLiga,ganadorPartido,fechaHora,idLocal,idVisitante,idPartido
         listaJugados.append(partidoJugado)
 
     return listaJugados
@@ -98,7 +130,11 @@ def Juegos_programados_liga(liga):
         equipoLocal = response['matches'][i]['homeTeam']['name']
         equipoVisitante = response['matches'][i]['awayTeam']['name']
         jornadaLiga = response['matches'][i]['matchday']
-        partidoDisputar = equipoLocal,equipoVisitante,jornadaLiga
+        fechaHora = response['matches'][i]['utcDate']
+        idLocal = response['matches'][i]['homeTeam']['id']
+        idVisitante = response['matches'][i]['awayTeam']['id']
+        idPartido = response['matches'][i]['id']
+        partidoDisputar = equipoLocal,equipoVisitante,jornadaLiga,fechaHora,idLocal,idVisitante,idPartido
         lista_partidos_disputar.append(partidoDisputar)
     
     return lista_partidos_disputar
