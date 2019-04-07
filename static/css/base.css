@@ -91,6 +91,21 @@ footer
     text-align: center;
 }
 
+.listado-ligas ul, ol
+{
+    list-style: none;
+}
+
+.imagenesPie
+{
+    margin: 0 50px;
+}
+
+.pasarse
+{
+    text-align: center;
+}
+
 
 @media (min-width: 576px)
 {.container 

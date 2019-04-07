@@ -3,9 +3,16 @@
     Informacion Partidos
 {% endblock %}
 {% block content %}
-    <table class="egt">
-        {% for partidos in partidos %}
-          <tr> {{ partidos }} </tr>   
-        {% endfor %}
-    </table>
+    <div id="informacionPartidos" class="informacionPartidos">
+        <table class="egt">
+            {% for partidos in partidos %}
+            <tr> {{ partidos }} </tr>   
+            {% endfor %}
+        </table>
+    </div>
+    <script src="../../static/js/apuestas.js"></script>
+{% endblock %}
+
+{% block scripts %}
+    
 {% endblock %}
