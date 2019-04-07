@@ -11,5 +11,6 @@ urlpatterns = [
  	path('ProgramadosInglaterra', views.JuegosProgramadosLigaInglesa, name='JuegosProgramadosLigaInglesa'),
  	path('ProgramadosItalia', views.JuegosProgramadosLigaItaliana, name='JuegosProgramadosLigaItaliana'),
  	path('ProgramadosAlemania', views.JuegosProgramadosLigaAlemana, name='JuegosProgramadosLigaAlemana'),
+ 	path('JugadosTodasLigas', views.JugadosTodasLasLigas, name='JugadosTodasLasLigas'),
     #path('signup/', SignUpView.as_view(), name="signup"),
 ]

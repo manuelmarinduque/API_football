@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.apuesta',
     'apps.partido',
     'apps.registration',
     'apps.usuario',
