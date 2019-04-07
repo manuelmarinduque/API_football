@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Editar email{% endblock %}
+{% block content %}
+    <h3> Perfil </h3>
+    <!-- Importante poner el attr method -->
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+    <p><input type="submit" class="btn btn-success btn-block textoFormulario" value="Actualizar"></p>
+    </form>
+{% endblock %}
