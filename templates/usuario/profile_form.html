@@ -2,36 +2,51 @@
 {% load static %}
 {% block title %}Perfil{% endblock %}
 {% block content %}
-    <h3> Perfil </h3>
-    <form action="" method="post">
-        {% csrf_token %}
 
-        <!-- Inhabilitado -->
-        {{ form.username }}
+    <form action="" method="post" class="formulario col-lg-6 col-11 container">
+        <div class="formulario-interno container">
+            <h3 class="titulo-form mb-4 titulo-formulario"> Perfil </h3>
+            {% csrf_token %}
 
-        {{ form.first_name }}
-        {{ form.last_name }}
+            <label class="textoFormulario  mb-2 ">
+                UserName: 
+            </label>
+            <!-- Inhabilitado -->
+            {{ form.username }}
+            {{ form.first_name }}
 
-        <!-- Inhabilitado -->
-        {{ form.email }}
-        <p>Si deseas editar tu email, ingresa <a href="{% url 'profile_email' %}">aquí</a>. <br>
-        Y si deseas cambiar tu contraseña ingresa <a href="{% url 'password_change' %}">aquí</a></p>
+            {{ form.last_name }}
 
-        <!-- Inhabilitado -->
-        {{ form.cedula }}
+            <label class="textoFormulario mb-2">
+                Correo Electronico: 
+            </label>
+            <!-- Inhabilitado -->
+            {{ form.email }}
+            <p class= " ultimo1">Si deseas editar tu email, ingresa <a href="{% url 'profile_email' %}">aquí</a>. <br>
+            Y si deseas cambiar tu contraseña ingresa <a href="{% url 'password_change' %}">aquí</a></p>
 
-        <!-- Inhabilitado -->
-        {{ form.saldo.errors }}
-        {{ form.saldo }}
+            <!-- Inhabilitado -->
+            {{ form.cedula }}
 
-        {{ form.telefono }}
+            <!-- Inhabilitado -->
+            {{ form.saldo.errors }}
+            {{ form.saldo }}
 
-        {{ form.fecha_nacimiento.errors }}
-        {{ form.fecha_nacimiento }}
+            {{ form.telefono }}
 
-        {{ form.pais }}
-        {{ form.ciudad }}
+            <div class="fecha inputR ">
+                {{ form.fecha_nacimiento.errors }}
+                {{ form.fecha_nacimiento }}
+            </div>
 
-    <p><input type="submit" class="btn btn-success btn-block textoFormulario" value="Actualizar"></p>
+            {{ form.pais }}
+            {{ form.ciudad }}
+
+            <p><input type="submit" class="btn btn-success btn-block textoFormulario" value="Actualizar"></p>
+        </div>
     </form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/configuracion.js' %}"></script>
 {% endblock %}

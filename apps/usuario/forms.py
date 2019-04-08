@@ -46,16 +46,16 @@ class ProfileForm(forms.ModelForm):
         fields = ['username', 'first_name', 'last_name', 'email', 'cedula', 'saldo', 'telefono', 'fecha_nacimiento',
                   'pais', 'ciudad']
         widgets = {
-            'username': forms.TextInput(),
-            'first_name': forms.TextInput(),
-            'last_name': forms.TextInput(),
-            'email': forms.EmailInput(),
-            'cedula': forms.TextInput(),
-            'saldo': forms.TextInput(),
-            'telefono': forms.TextInput(),
+            'username': forms.TextInput(attrs={'class': 'form-control mb-2'}),
+            'first_name': forms.TextInput(attrs={'class': 'inputL input'}),
+            'last_name': forms.TextInput(attrs={'class': 'inputR input'}),
+            'email': forms.EmailInput(attrs={'class': 'input form-control mb-2'}),
+            'cedula': forms.TextInput(attrs={'class': 'inputL input'}),
+            'saldo': forms.TextInput(attrs={'class': 'inputR input'}),
+            'telefono': forms.TextInput(attrs={'class': 'inputL input'}),
             'fecha_nacimiento': forms.SelectDateWidget(years=range(1919, 2019)),
-            'pais': forms.TextInput(),
-            'ciudad': forms.TextInput(),
+            'pais': forms.TextInput(attrs={'class': 'form-control mb-2'}),
+            'ciudad': forms.TextInput(attrs={'class': 'form-control mb-2'}),
         }
 
     def clean_fecha_nacimiento(self):

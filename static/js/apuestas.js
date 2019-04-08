@@ -269,7 +269,7 @@ function imprimirLigas(arrgloDetalles)
         document.write("<div class='botonera'>");
         document.write("<h2 class='titulo-formulario2 container'>Liga Española</h2>");
         document.write("<p>     ");
-        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosEspaña'> Ver mas Maradores </a>")
+        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosEspaña'> Ver mas Marcadores </a>")
         document.write("</p>     ");
         document.write("</div>");
     }
@@ -278,7 +278,7 @@ function imprimirLigas(arrgloDetalles)
         document.write("<div class='botonera'>");
         document.write("<h2 class='titulo-formulario2 container'>Premiere League Inglesa</h2>");
         document.write("<p>     ");
-        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosInglaterra'> Ver mas Maradores </a>")
+        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosInglaterra'> Ver mas Marcadores </a>")
         document.write("</p>     ");
         document.write("</div>");
         console.log(ligaIm);
@@ -288,7 +288,7 @@ function imprimirLigas(arrgloDetalles)
         document.write("<div class='botonera'>");
         document.write("<h2 class='titulo-formulario2 container'>Serie A italiana</h2>");
         document.write("<p>     ");
-        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosItalia'> Ver mas Maradores </a>")
+        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosItalia'> Ver mas Marcadores </a>")
         document.write("</p>     ");
         document.write("</div>");
         console.log(ligaIm);
@@ -298,7 +298,7 @@ function imprimirLigas(arrgloDetalles)
         document.write("<div class='botonera'>");
         document.write("<h2 class='titulo-formulario2 container'>Bundes liga alemana primera division</h2>");
         document.write("<p>     ");
-        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosAlemania'> Ver mas Maradores </a>")
+        document.write("    <a type='submit' class='btn btn-success btn-block textoFormulario btn-marcador' href = 'JugadosAlemania'> Ver mas Marcadores </a>")
         document.write("</p>   ");
         document.write("</div>");
         console.log(ligaIm);
