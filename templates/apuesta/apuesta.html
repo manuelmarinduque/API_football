@@ -7,6 +7,10 @@
     {% csrf_token %}
     
     {{ form.as_p }}   
+
+    {% for partidoslist in partidoslist %}
+           {{ partidoslist }}
+    {% endfor %}
     <button type="submit">Guardar</button>
 </form>
         

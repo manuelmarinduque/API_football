@@ -38,11 +38,9 @@ class ApuestaForm(forms.ModelForm):
 
     }
 
-    CHOICES = (('GANADOR', 'MARCADOR', 'DIFERENCIA GOL'))
-
     widgets = {
         'idApuesta': forms.TextInput(attrs={'class': 'form-control'}),
-        'tipo': forms.Select(choices = CHOICES),
+        'tipo': forms.ChoiceField(choices=('GANADOR', 'MARCADOR', 'DIFERENCIA GOL')),
         'fechaApuesta': forms.DateField(label='Fecha Apuesta:'),
         'montoApuesta': forms.TextInput(attrs={'class': 'form-control'}),
         'gano': forms.BooleanField(required=False),
