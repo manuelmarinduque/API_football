@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Lista de usuarios{% endblock %}
+{% block content %}
+    <h3> Listado de usuarios </h3>
+    {% for user in object_list %}
+        <div>
+            <p>
+                Usuario: {{ user.username }}
+            </p>
+            <p>
+                <a href="{% url 'listado_detail' user.cedula %}">Detalles del usuario</a>
+            </p>
+        </div>
+    {% endfor %}
+{% endblock %}

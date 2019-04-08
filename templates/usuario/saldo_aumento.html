@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Aumento saldo{% endblock %}
+{% block content %}
+    <h3> Aumento para el usuario {{ usuario.username }} </h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Ingrese un aumento de saldo </p>
+        {{ form.as_p }}
+
+    <p><input type="submit" class="btn btn-success btn-block textoFormulario" value="Actualizar"></p>
+    </form>
+{% endblock %}

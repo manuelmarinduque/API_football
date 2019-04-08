@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from API_football.views import HomePageView
+from API_football.views import HomePageView, UsuarioList, SaldoUpdate, UsuarioDetailView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +26,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('apps.usuario.urls')),
     path('partidos/', include('apps.partido.urls')),
-
+    path('listado/', UsuarioList.as_view(), name='listado'),
+    path('listado/detail/<int:pk>/', UsuarioDetailView.as_view(), name='listado_detail'),
+    path('listado/detail/actualizar/<int:pk>/', SaldoUpdate.as_view(), name='actu_saldo'),
     path('apuestas/', include('apps.apuesta.urls')),
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

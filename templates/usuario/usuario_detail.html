@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Lista de usuarios{% endblock %}
+{% block content %}
+    <h3> Detalles del usuario {{ usuario.username }} </h3>
+
+    <p>
+        Nombre: {{ usuario.first_name }}
+    </p>
+    <p>
+        Apellido: {{ usuario.last_name }}
+    </p>
+    <p>
+        Email: {{ usuario.email }}
+    </p>
+    <p>
+        Cedula: {{ usuario.cedula }}
+    </p>
+    <p>
+        Saldo: {{ usuario.aumentosaldo }}
+    </p>
+    <p>
+        <a href="{% url 'actu_saldo' usuario.cedula %}">Modificar saldo</a>
+    </p>
+    <p>
+        Fecha de nacimiento: {{ usuario.fecha_nacimiento }}
+    </p>
+    <p>
+        Pais: {{ usuario.pais }}
+    </p>
+    <p>
+        Ciudad: {{ usuario.ciudad }}
+    </p>
+
+{% endblock %}
