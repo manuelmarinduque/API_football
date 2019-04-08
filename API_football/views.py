@@ -1,6 +1,9 @@
-from django.views.generic import TemplateView
+from django.views.generic import CreateView
+from apps.usuario.models import Usuario
 
 
 # Create your views here.
-class HomePageView(TemplateView):
+class HomePageView(CreateView):
+    model = Usuario
     template_name = 'base.html'
+    fields = ['saldo']

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+    <h3> Perfil </h3>
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <!-- Inhabilitado -->
+        {{ form.username }}
+
+        {{ form.first_name }}
+        {{ form.last_name }}
+
+        <!-- Inhabilitado -->
+        {{ form.email }}
+        <p>Si deseas editar tu email, ingresa <a href="{% url 'profile_email' %}">aquí</a>. <br>
+        Y si deseas cambiar tu contraseña ingresa <a href="{% url 'password_change' %}">aquí</a></p>
+
+        <!-- Inhabilitado -->
+        {{ form.cedula }}
+
+        <!-- Inhabilitado -->
+        {{ form.saldo.errors }}
+        {{ form.saldo }}
+
+        {{ form.telefono }}
+
+        {{ form.fecha_nacimiento.errors }}
+        {{ form.fecha_nacimiento }}
+
+        {{ form.pais }}
+        {{ form.ciudad }}
+
+    <p><input type="submit" class="btn btn-success btn-block textoFormulario" value="Actualizar"></p>
+    </form>
+{% endblock %}
