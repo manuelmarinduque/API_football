@@ -7,6 +7,7 @@ from apps.usuario.forms import RegistroForm, ProfileForm, EmailForm  # Es como t
 from apps.usuario.models import Usuario
 
 
+# Create your views here:
 class SignUpView(CreateView):
     model = Usuario
     template_name = 'usuario/registrar.html'

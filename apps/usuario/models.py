@@ -21,4 +21,5 @@ class Usuario(User, models.Model):
 
     def aumentosaldo(self):
         aumento = self.saldo+self.saldo2
-        return aumento
+        self.saldo = aumento
+        return self.saldo

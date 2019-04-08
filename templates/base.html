@@ -63,8 +63,22 @@
                             </a>
                         </li>
                     {% elif request.user.is_staff %}
+                        <div class="navbar-principal">
+                            <ul class="menu">
+                                <li>
+                                    <i class="fa fa-dollar"></i>
+                                    {{ usuario.aumentosaldo }}
+                                </li>
+                            </ul>
+                        </div>
+                        <li class="active nav-item">
+                            <a href="{% url 'Home' %}">
+                                <i class='fa fa-home'></i>
+                                Home
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <a href="{% url 'login' %}">
+                            <a href="{% url 'listado' %}">
                                 <i class='fas fa-sign-out-alt'></i>
                                 Usuarios
                             </a>
