@@ -1,6 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
     Informacion Partidos
+{% endblock %}
+{% block menu %}
+<ul class="desplegable">
+    <li>
+        <a href="ProgramadosEspaña">Liga Española</a>
+    </li>
+    <li>
+        <a href="ProgramadosInglaterra">Liga Inglesa</a>
+    </li>
+    <li>
+        <a href="ProgramadosItalia">Liga Italiana</a>
+    </li>
+    <li>
+        <a href="ProgramadosAlemania">Liga Alemana</a>
+    </li>
+    <li>
+        <a href="JugadosTodasLigas">Ultimos Marcadores</a>
+    </li>
+</ul>
 {% endblock %}
 {% block content %}
     <div id="informacionPartidos" class="informacionPartidos">

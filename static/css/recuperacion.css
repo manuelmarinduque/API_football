@@ -7,3 +7,23 @@
 {
     width: 75% !important;
 }
+
+.ultimo1
+{
+    padding-bottom: 35px;
+    text-align: justify;
+    font-family: 'Roboto Slab', serif;
+}
+
+.fecha
+{
+    padding-top: 12px;
+}
+
+.fecha select
+{
+    padding: .3rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    width: auto !important;
+}
