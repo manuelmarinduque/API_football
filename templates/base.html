@@ -62,12 +62,25 @@
                                 Acceder
                             </a>
                         </li>
+                    {% elif request.user.is_staff %}
+                        <li class="nav-item">
+                            <a href="{% url 'login' %}">
+                                <i class='fas fa-sign-out-alt'></i>
+                                Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}">
+                                <i class='fas fa-sign-out-alt'></i>
+                                Salir
+                            </a>
+                        </li>
                     {% else %}
                         <div class="navbar-principal">
                             <ul class="menu">
                                 <li>
                                     <i class="fa fa-dollar"></i>
-                                    {{ object.saldo }}
+                                    {{ usuario.aumentosaldo }}
                                 </li>
                             </ul>
                         </div>

@@ -13,7 +13,12 @@ class Usuario(User, models.Model):
     cedula = models.CharField(max_length=12, primary_key=True)
     sexo = models.CharField(max_length=1, choices=generos)
     saldo = models.PositiveIntegerField(default=0)
+    saldo2 = models.PositiveIntegerField(default=0)
     telefono = models.CharField(max_length=10)
     fecha_nacimiento = models.DateField()
     pais = models.CharField(max_length=20)
     ciudad = models.CharField(max_length=30)
+
+    def aumentosaldo(self):
+        aumento = self.saldo+self.saldo2
+        return aumento
