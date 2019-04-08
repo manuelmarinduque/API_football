@@ -1,4 +1,6 @@
 
+var almacen=[];
+
 //Extraccion de la informacion enviada desde el Backend
 var informacionR = document.getElementById("informacionPartidos").innerHTML;
 var lista = document.getElementById("lista");
@@ -149,23 +151,25 @@ function cargarPartidos(arregloDePartidos, tam)
         var arrgloDetalles = arregloDePartidos[i].split(",");
         if(arrgloDetalles[2] == pos)
         {
-            imprimirPartidos(arrgloDetalles);
+            imprimirPartidos(arrgloDetalles, i);
         }
     }      
 }
 
-function imprimirPartidos(arrgloDetalles)
+function imprimirPartidos(arrgloDetalles, i)
 {
     var horario = arrgloDetalles[3].split("T");
     var fecha = horario[0];
     fecha = fecha.replace(/c/gi ,'/' );
     var hora = horario[1];
     
+    var ids = "id"+i;
+
 
     document.write("<div class='container col-sm-10 col-lg-10 col-md-10'>")
     document.write("    <div class='partido container onclick'>")
-    document.write("        <div class='equipos'>");
-    document.write("            <div class='enfrentamiento'>" )
+    document.write("        <div id='"+ids+ "' name='"+i+"' class='equipos'>");
+    document.write("            <div class='enfrentamiento' >" )
     document.write("                <div class='container col-lg-5 col-md-5 col-sm-5 equipo1 col-5'>")
     document.write("                    <p class='informacion'>" + arrgloDetalles[0] + "</p>")
     document.write("                </div>")
@@ -177,7 +181,7 @@ function imprimirPartidos(arrgloDetalles)
     document.write("                </div>")
     document.write("            </div>")
     document.write("            <div class='temporada container'>" )
-    document.write("               <p class='informacion informacion3'> Temporada: "+ arrgloDetalles[2] + "</p>")
+    document.write("               <p class='informacion informacion3'> Jornada: "+ arrgloDetalles[2] + "</p>")
     document.write("            </div>")
     document.write("            <div class='horario container'>" )
     document.write("                <p class='informacion informacion2'>")
@@ -216,7 +220,9 @@ function principio2()
     document.write("</div>");
     crearSelect(depurarTexto(informacion), 2);
     tempo = extrarProximaTemporada(partidos(informacion));
-    console.log(tempo)
+    almacen.push(depurarTexto(informacion));
+    console.log(almacen);
+
     cargarPartidos2(partidos(informacion));
 }
 
@@ -226,7 +232,7 @@ function cargarPartidos2(arregloDePartidos)
     for( var i = 0 ; i < arregloDePartidos.length ; i++)
     {
         var arrgloDetalles = arregloDePartidos[i].split(",");
-        imprimirPartidos(arrgloDetalles);
+        imprimirPartidos(arrgloDetalles, i);
     }      
 }
 
@@ -327,7 +333,7 @@ function imprimirLigas(arrgloDetalles)
     document.write("                </div>")
     document.write("            </div>")
     document.write("            <div class='temporada container'>" )
-    document.write("               <p class='informacion informacion3'> Temporada: "+ arrgloDetalles[3] + " (Terminado)" + "</p>")
+    document.write("               <p class='informacion informacion3'> Jornada: "+ arrgloDetalles[3] + " (Terminado)" + "</p>")
     document.write("            </div>")
     document.write("            <div class='horario container'>" )
     document.write("                <p class='informacion informacion2'>")
