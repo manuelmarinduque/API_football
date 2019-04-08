@@ -71,8 +71,8 @@ body
 
 .contenido
 {
-    margin-top: 150px;
-    min-height: 450px;
+    margin-top: 100px;
+
 }
 
 
@@ -167,7 +167,7 @@ footer
     }
     .titulo
     {
-        width: 75%;
+        width: 70%;
     }
     
     .menu
@@ -183,13 +183,21 @@ footer
     }
     .navbar .navbar-collapse
     {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        margin-left: 160px;
-        margin-top: -20px;
-        width: 160px;
         background-color: #fff;
+        width: 150px;
     }
+
+    .menu
+    {
+        width: 100%;
+    }
+
+    .menu li
+    {
+        width: 100%;
+    }
+
+
     .menu-contraido
     {
         position: absolute;
@@ -199,6 +207,16 @@ footer
     .menu-contraido li
     {
         border-bottom: 1px solid #666;
+    }
+
+    .desplegable
+    {
+        position: relative;
+    }
+
+    .desplegable ul
+    {
+        right: -50%;
     }
 }
 
@@ -220,6 +238,34 @@ footer
    
 }
 
+.desplegable
+{
+    display: grid;
+    color: black;
+    float: right;
+    margin: 0; 
+    padding: 0px;
+    width: 150px;
+    background-color: #f8f9fa;
+    position: absolute;
+    top: 50px;
+    display: none;
+}
+
+.desplegable li
+{
+    border-bottom: 1px solid #666;
+}
+
+.lista:hover > .desplegable
+{
+    display: block;
+}
+
+.imgFooter
+{
+    margin: 25px;
+}
 
 
 

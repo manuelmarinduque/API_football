@@ -11,19 +11,190 @@
     width: 100%;
 }
 
+
 .partido
 {
-    width: 100%;
-    height: 150px;
-    background-color: black;
-    background-image: url("../../media/fondoApuesta.jpg");
-    border: 1px solid #000000;
-    margin-bottom: 50px;
-    border-radius: 50px 20px
+    width: 45%;
+    margin: 20px;
+    height: auto;
+    position: relative;
+    cursor: pointer;
 }
 
-.partido:hover
+.equipos
 {
-    
+    width: 103%;
+    height: 150px;
+    background-image: url("../../media/fondoApuesta1.jpg");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #000000;
+    margin-bottom: 50px;
+    border-radius: 50px 20px;
+    background-repeat: no-repeat;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.equipos::before
+{
+  border-radius: 50px 20px;
+  content:"";
+  position:absolute;
+
+  width:100%;
+  height:150px;
+  background:rgba(0,0,0,0.6);
+
+}
+
+.informacion 
+{
+    font-size: 30px;
+    color: #ffffff !important;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
     cursor: pointer;
+}
+
+.informacion2
+{
+    font-size: 15px !important;
+}
+
+.informacion3
+{
+    font-weight: normal !important;
+    font-size: 15px !important;
+}
+
+
+.partido:hover .equipos,
+.partido:focus .equipos 
+{
+    /*
+  transform: scale(1.1);
+  transition: all .5s;
+*/
+
+  -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+.partido:hover .equipos::before, .partido:focus .equipos::before {
+    display: block;
+}
+
+.partido:hover p, .partido:focus p {
+    display: block;
+}
+
+.equipo1
+{
+    float: left;
+}
+
+.equipo2
+{
+    float: right;
+}
+
+
+.enfrentamiento
+{
+    margin-top:20px;
+}
+
+.vs
+{
+    position: absolute !important;
+    float: right;
+    right: 477.141;
+    left: 43%;
+}
+
+.inf
+{
+    font-size:18px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+.horario
+{
+    margin-top: 90px;
+    position: absolute;
+}
+
+.jornada
+{
+    height: auto;
+}
+
+.lista-series
+{
+    width: 80%;
+    float: right ;
+    height: 18px;
+}
+
+.letra
+{
+    font-family: 'Roboto Slab', serif;
+    margin-top: 7px;
+}
+
+.lista-series option
+{
+    font-family: 'Roboto Slab', serif !important;
+    font-size: 15px !important;
+}
+
+.temporada
+{
+    margin-top: 60px;
+    position: absolute;
+}
+
+.button
+{
+    width: 100%;
+    float: right;
+
+}
+
+.marcador
+{
+    margin-top: 50px;
+}
+
+.containerLigas
+{
+    margin-bottom: 100px;
+}
+
+.btn-marcador
+{
+    width: auto !important;
+    margin-left: 83%
+}
+
+.botonera
+{
+    height: auto;
 }

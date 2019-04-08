@@ -104,24 +104,29 @@
                                 Home
                             </a>
                         </li>
-                        <li class="active nav-item">
+                        <li class="active nav-item lista">
                             <a class="listado-ligas">
                                 <i class='fas fa-chart-line'></i>
                                 Apostar
-                                <!--<ul>
+                                {% block menu %}
+                                <ul class="desplegable">
                                     <li>
-                                        <a href="">Liga Española</a>
+                                        <a href="partidos/ProgramadosEspaña">Liga Española</a>
                                     </li>
                                     <li>
-                                        <a href="">Liga Inglesa</a>
+                                        <a href="partidos/ProgramadosInglaterra">Liga Inglesa</a>
                                     </li>
                                     <li>
-                                        <a href="">Liga Italiana</a>
+                                        <a href="partidos/ProgramadosItalia">Liga Italiana</a>
                                     </li>
                                     <li>
-                                        <a href="">Liga Alemana</a>
+                                        <a href="partidos/ProgramadosAlemania">Liga Alemana</a>
                                     </li>
-                                </ul>-->
+                                    <li>
+                                        <a href="partidos/JugadosTodasLigas">Ultimos Marcadores</a>
+                                    </li>
+                                </ul>
+                                {% endblock %}
                             </a>
                         </li>
                         <li class="nav-item">
@@ -176,9 +181,9 @@
             <p>Todos los derechos reservados para BETTING SYSTEM, Colombia.</p>
         </div>
         <div class="pasarse">
-            <img class="col-lg-1 imagenesPie" src="../media/colJuegos.png" alt="Juege legal">
-            <img class="col-lg-1 imagenesPie" src="../media/mayores18+.png" alt="Solo para mayores de edad">
-            <img class="col-lg-1 imagenesPie" src="../media/colJuegos2.png" alt="Autoriza Coljuegos">
+            <img class="imgFooter col-lg-1 col-sm-2 col-2 imagenesPie" src="../media/colJuegos.png" alt="Juege legal">
+            <img class="imgFooter col-lg-1 col-sm-2 col-2 imagenesPie" src="../media/mayores18+.png" alt="Solo para mayores de edad">
+            <img class="imgFooter col-lg-1 col-sm-2 col-2 imagenesPie" src="../media/colJuegos2.png" alt="Autoriza Coljuegos">
         </div>
     </div>
 </footer>

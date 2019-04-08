@@ -99,7 +99,7 @@ def Juegos_Jugados_liga(liga):
     headers = { 'X-Auth-Token': 'ccecd76c9c7f40f09ae18781d1c8f46d' }
     connection.request('GET', '/v2/competitions/'+liga+'/matches?status=FINISHED', None, headers )
     response = json.loads(connection.getresponse().read().decode()) 
-    for i in range(0,len(response['matches'])):
+    for i in range(0,1):
         equipoLocal = response['matches'][i]['homeTeam']['name'] 
         equipoVisitante = response['matches'][i]['awayTeam']['name']   
         golesLocal = response['matches'][i]['score']['fullTime']['homeTeam']
@@ -110,7 +110,7 @@ def Juegos_Jugados_liga(liga):
         idLocal = response['matches'][i]['homeTeam']['id']
         idVisitante = response['matches'][i]['awayTeam']['id']
         idPartido = response['matches'][i]['id']
-        partidoJugado = equipoLocal,equipoVisitante,golesLocal,golesVisitante, jornadaLiga,ganadorPartido,fechaHora,idLocal,idVisitante,idPartido
+        partidoJugado = liga,equipoLocal,equipoVisitante,golesLocal,golesVisitante, jornadaLiga,ganadorPartido,fechaHora,idLocal,idVisitante,idPartido
         listaJugados.append(partidoJugado)
 
     return listaJugados
