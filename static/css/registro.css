@@ -62,6 +62,20 @@ label
     padding-top: 40px;
 }
 
+.titulo-formulario1
+{
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+.titulo-formulario2
+{
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    position: absolute;
+    width: auto !important;
+}
+
 .imagenInicioS
 {
     text-align: center !important;

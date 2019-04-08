@@ -10,9 +10,19 @@
             {% endfor %}
         </table>
     </div>
-    <script src="../../static/js/apuestas.js"></script>
-{% endblock %}
+    <div class="container" >
+        <div class="jornada  form-row" id="jornada">
+            <div class="form-group form-row col-lg-5 col-md-6 col-sm-4 col-4 seleccion">
+                <label for="inputState" class="letra form-group col-lg-6 col-md-6">Selecciona una Temporada:</label>
+                <select id="lista" class="lista-series form-control form-group col-lg-4 col-md-4 col-sm-6 col-6">
 
-{% block scripts %}
-    
+                </select>
+            </div>
+            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-3 button">
+                <p>
+                    <input id="Button" type="submit" class="btn btn-success btn-block textoFormulario" value="Buscar">
+                </p>
+            </div>
+        </div>
+    <script src="../../static/js/apuestas.js"></script>
 {% endblock %}
