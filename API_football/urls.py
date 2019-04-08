@@ -27,4 +27,5 @@ urlpatterns = [
     path('accounts/', include('apps.usuario.urls')),
     path('partidos/', include('apps.partido.urls')),
 
+    path('apuestas/', include('apps.apuesta.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
