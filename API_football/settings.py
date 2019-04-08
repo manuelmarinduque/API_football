@@ -121,10 +121,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT= 'media'
+MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Auth redirect
-LOGIN_REDIRECT_URL = 'Home'
+# LOGIN_REDIRECT_URL = 'Home'
 LOGOUT_REDIRECT_URL = 'login'
 
 # Emails para recuperación de la contraseña

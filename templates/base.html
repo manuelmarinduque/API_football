@@ -6,7 +6,7 @@
     {% load static %}
 
     <!-- Tipos de letras-->
-    <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat:700|Source+Sans+Pro:700|Roboto+Slab"" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat:700|Source+Sans+Pro:700|Roboto+Slab" rel="stylesheet">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/registro.css' %}"/>
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/recuperacion.css' %}"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/partidos.css' %}"/>
+    {% block styles %}
+    {% endblock %}
    
     <!-- Latest compiled and minified CSS Libreria Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -64,7 +67,7 @@
                             <ul class="menu">
                                 <li>
                                     <i class="fa fa-dollar"></i>
-                                    999
+                                    0
                                 </li>
                             </ul>
                         </div>
@@ -75,13 +78,27 @@
                             </a>
                         </li>
                         <li class="active nav-item">
-                            <a href="{% url 'Home' %}">
-                                <i class='fa fa-home'></i>
+                            <a class="listado-ligas">
+                                <i class='fas fa-chart-line'></i>
                                 Apostar
+                                <!--<ul>
+                                    <li>
+                                        <a href="">Liga Española</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Liga Inglesa</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Liga Italiana</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Liga Alemana</a>
+                                    </li>
+                                </ul>-->
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">
+                            <a href="{% url 'profile' %}">
                                 <i class='fas fa-user-cog'></i>
                                 Perfil
                             </a>
@@ -121,15 +138,21 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="https://prinzhorn.github.io/skrollr/dist/skrollr.min.js"></script>
+    {% block scripts %}
+
+
+    {% endblock %}
 
     <!-- Inicio del pie de pagina-->        
     <div class="container">
         <div class="derechos">
             <p>Todos los derechos reservados para BETTING SYSTEM, Colombia.</p>
         </div>
-        <img class="col-lg-4" src="../media/colJuegos.png" alt="Juege legal">
-        <img class="col-lg-4" src="../media/mayores18+.png" alt="Solo para mayores de edad">
-        <img class="col-lg-4" src="../media/colJuegos2.png" alt="Autoriza Coljuegos">
+        <div class="pasarse">
+            <img class="col-lg-1 imagenesPie" src="../media/colJuegos.png" alt="Juege legal">
+            <img class="col-lg-1 imagenesPie" src="../media/mayores18+.png" alt="Solo para mayores de edad">
+            <img class="col-lg-1 imagenesPie" src="../media/colJuegos2.png" alt="Autoriza Coljuegos">
+        </div>
     </div>
 </footer>
 </html>
